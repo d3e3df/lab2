@@ -1,8 +1,24 @@
 [project]
-name = "labs"
+name = "lab2"
 version = "0.1.0"
-description = "Add your description here"
+description = "terminal"
 requires-python = ">=3.12"
 dependencies = [
+    "pyfakefs>=5.10.1",
     "pytest>=8.4.2",
 ]
+
+[dependency-groups]
+dev = [
+    "black>=25.9.0",
+    "isort>=7.0.0",
+    "pre-commit>=4.3.0",
+]
+
+[[tool.mypy.overrides]]
+module = [
+    "pytest.*",
+    "pyfakefs.*",
+    "tests.*"
+]
+ignore_missing_imports = true
